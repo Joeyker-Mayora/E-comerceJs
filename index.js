@@ -1,4 +1,4 @@
-const products = [
+const product = [
   {name: "Zapatillas de Futbol ", 
     id:"1", 
     image:"imgF/zapatillasF.jpg", 
@@ -179,6 +179,16 @@ const products = [
 
 ];
 
+
+let products= [];
+fetch("./productos.json")
+  .then(res => res.json())
+  .then(res => {
+    products = res;
+    items(products);
+  })
+  .catch(err => console.log(err));
+
 const contenedor = document.querySelector(".contenedor");
 const botonesCategorias = document.querySelectorAll(".btn-categ")
 const tituloPrincipal = document.querySelector(".title-prin")
@@ -210,7 +220,7 @@ function items(productosElegidos) {
   
 }
 
-items(products);
+
 botonesCategorias.forEach(boton => {
   boton.addEventListener('click',(e) => {
 
@@ -249,6 +259,28 @@ if (carritoLs) {
 
 
 function agregarAlCar (e) {
+  Toastify({
+    text: "Producto Agregado",
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", 
+    position: "right", 
+    stopOnFocus: true, 
+    style: {
+      background: "linear-gradient(to right, #4b33a8, #b7b7bd)",
+      borderRadius: "40px",
+      textTransform: "uppercase",
+      fontSize:".65rem"
+    },
+    offset: {
+      x: "2rem", 
+      y: "1.5rem" 
+    },
+    onClick: function(){} // Callback after click
+  }).showToast();
+
   const idBoton = e.currentTarget.id;
   const productoAgreado = products.find(producto => producto.id === idBoton)
 

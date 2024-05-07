@@ -71,6 +71,28 @@ function actualizarBtnEliminar() {
     })
 }    
 function eliminaraDelCar (e) {
+    Toastify({
+        text: "Se eliminó del Carrito",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #f12828, #b7b7bd)",
+          borderRadius: "40px",
+          textTransform: "uppercase",
+          fontSize:".65rem"
+        },
+        offset: {
+            x: "2rem",
+            y: "1.5rem" 
+          },
+        onClick: function(){} 
+      }).showToast();
+
     const idBtn = e.currentTarget.id;
     const index = carrito.findIndex(p => p.id === idBtn)
     carrito.splice(index,1)
@@ -80,6 +102,29 @@ function eliminaraDelCar (e) {
 }
 btnVaciar.addEventListener("click",vaciarCar)
 function vaciarCar() {
+    Toastify({
+        text: "Vaciaste el Carrito",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", 
+        position: "right", 
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #f12828, #b7b7bd)",
+          borderRadius: "40px",
+          textTransform: "uppercase",
+          fontSize:".65rem"
+          
+        },
+        offset: {
+            x: "2rem", 
+            y: "1.5rem" 
+          },
+        onClick: function(){}
+      }).showToast();
+
     carrito.length = 0;
     localStorage.setItem("productos-carrito" ,JSON.stringify(carrito));
     carProduct()

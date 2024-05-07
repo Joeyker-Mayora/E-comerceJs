@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root { 
-    --clr-white: #ebebee;
+    --clr-white: #ebe8e8;
     --clr-red: #d62727;
     --clr-main: #4b33a8;
-    --clr-gray: #ececf0;
+    --clr-gray: #e7e7eb;
 }
 
 *{
