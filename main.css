@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root { 
+    --clr-white: #ebebee;
+    --clr-red: #d62727;
+    --clr-main: #4b33a8;
+    --clr-gray: #ececf0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "rubik", sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6, ul, a, p, input, textarea {
+    margin: 0;
+    padding: 0;
+
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+
+}
+.mobile {
+    display: none;
+}
+.close-menu {
+    display: none;
+}
+body {
+    background-color: var(--clr-main);
+   
+}
+aside{
+    padding: 2rem;
+    padding-right: 0;
+    position: sticky;
+    color: var(--clr-white);
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.btn-menu {
+    background-color: transparent;
+    border: 0;
+    color: var(--clr-white);
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: .85rem;
+    width: 100%;
+}
+.btn-menu > i.bi-hand-index-thumb-fill,
+.btn-menu > i.bi-hand-index-thumb {
+    transform: rotateZ(90deg);
+}
+.btn-menu.active {
+    color: var(--clr-main);
+    background-color: var(--clr-white);
+   
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+    
+}
+.btn-menu.active::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: .5rem;
+    box-shadow: 0 1rem 0 var(--clr-white);
+
+}
+.btn-menu.active::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: .5rem;
+    box-shadow: 0 -1rem 0 var(--clr-white);
+
+}
+.btn-car{
+    margin-top: 2rem;
+}
+
+
+footer{
+ color: rgb(156, 126, 190);
+}
+
+main {
+    background-color: var(--clr-white);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+.title-prin {
+    color: var(--clr-main);
+    margin-bottom: 2rem;
+}
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+.product-img {
+    max-width: 100%;
+    border-radius: 1rem;
+    height: auto;
+    width: 300px;
+    height: 250px;
+}
+.product-detalles {
+    background-color: var(--clr-main);
+    color: rgb(218, 211, 211);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.product-titulo {
+    font-size: 1rem;
+}
+.btn-agg {
+    border: 0;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    border-radius: 2rem;
+    padding: .5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid var(--clr-white);
+    transition: background-color .4s, color .4s;
+    
+}
+.btn-agg:hover {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+}
+
+.car-vacio, .car-comprado {
+    color: var(--clr-main);
+    
+}
+.car-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.car-product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr-gray);
+    border-radius: 1rem;
+    color: var(--clr-main);
+    padding: .5rem;
+    padding-right: 3rem;
+}
+.car-img {
+    width: 4rem;
+    border-radius: 1rem;
+}
+.car-product small {
+    font-size: .75rem;
+}
+.car-product-eliminar {
+    border: 0;
+    background-color: transparent;
+    color: var(--clr-red);
+    cursor: pointer;
+}
+.contenedor-car {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.car-acciones {
+    display: flex;
+    justify-content: space-between;
+}
+.car-btn-var {
+    border: 0;
+    background-color: rgb(211, 205, 205);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    cursor: pointer;
+    
+}
+.car-btn-var :hover {
+ background-color: var(--clr-main);
+ color: var(--clr-gray);
+}
+.car-acciones-der {
+    display: flex;
+}
+.car-total{
+    display: flex;
+    background-color: rgb(211, 205, 205);
+    padding: 1rem;
+    padding: 1rem;
+    color: var(--clr-main);
+    text-transform: uppercase;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    gap: 1rem;
+
+}
+.car-btn-var :hover {
+    background-color: var(--clr-main);
+    color: var(--clr-gray);
+}
+.car-comp {
+    border: 0;
+    background-color: var(--clr-main);
+    padding: 1rem;
+    color: var(--clr-gray);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+}
+.disabled {
+    display: none;
+}
+.num {
+    background-color: var(--clr-white);
+    padding: .15rem .25rem;
+    border-radius: .25rem;
+    color: var(--clr-main);
+}
+.btn-car.active .num {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+
+}
+@media screen and (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+    main {
+        padding: 1rem;
+    }
+
+}
+@media screen and (max-width: 675px) {
+    .contenedor {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    aside {
+        position: fixed;
+        z-index: 9;
+        background-color: var(--clr-main);
+        left: 0;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.75);
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s;
+    }
+    .aside-visible {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        
+    }
+    .btn-menu.active::before, .btn-menu.active::after {
+        display: none;
+    }
+    main {
+        margin: 1rem;
+        margin-top: 0;
+        padding: 1rem;
+    }
+    .contenedor {
+        grid-template-columns: 1fr 1fr ;
+    }
+    .mobile {
+        display: flex;
+        padding: 1.3rem;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--clr-gray);
+        
+        
+        
+    }
+    h1 {
+    font-size: 1.7rem;
+    }
+    .open-menu, .close-menu {
+        display: flex;
+        font-size: 2.5rem;
+        cursor: pointer;
+        background-color: transparent ;
+        border-color: transparent;
+        color:var(--clr-gray);
+        
+
+        
+    }
+    .close-menu {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        display: block;
+    }
+    .car-product {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding: .5rem;
+    }
+    .car-product-sub {
+        display: none;
+    }
+    .car-acciones {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    
+}
