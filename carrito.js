@@ -1,5 +1,9 @@
+//   LOCALSTORAGE
+
 let carrito = localStorage.getItem("productos-carrito");
 carrito = JSON.parse(carrito);
+
+// DOM
 
 const carVacio = document.querySelector(".car-vacio");
 const carProductos = document.querySelector(".car-productos");
@@ -9,6 +13,8 @@ let btnEliminar = document.querySelectorAll(".car-product-eliminar")
 const btnVaciar = document.querySelector(".car-btn-var");
 const totalpagar = document.querySelector("#total");
 const btnComprar = document.querySelector(".car-comp");
+
+// FUNCTIONS
 
 function carProduct () {
     if (carrito && carrito.length > 0) {
