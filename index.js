@@ -78,9 +78,13 @@ function actualizarBotonesAgregar() {
 botonesCategorias.forEach(boton => {
   boton.addEventListener('click', (e) => {
     const categoriaSeleccionada = e.currentTarget.id;
+
+    botonesCategorias.forEach(b => b.classList.remove('active'));
+
+    e.currentTarget.classList.add('active');
+
     const productosFiltrados = productos.filter(p => categoriaSeleccionada === "todos" || p.categoria === categoriaSeleccionada);
     
-    // Actualizar el título principal según la categoría seleccionada
     if (categoriaSeleccionada === "todos") {
       tituloPrincipal.textContent = "Todos los Productos";
     } else {
