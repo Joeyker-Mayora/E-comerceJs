@@ -387,4 +387,7 @@ main {
     .product-detalles {
         background-color: rgb(44, 4, 109);
     }
+    .product-img {
+        height: 280px;
+    }
 }
