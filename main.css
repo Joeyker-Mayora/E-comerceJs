@@ -370,3 +370,10 @@ main {
     }
     
 }
+
+@media screen and (max-width: 400px) {
+    .contenedor {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 2rem;
+    }
+}
