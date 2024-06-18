@@ -120,7 +120,7 @@ footer{
 }
 
 main {
-    background-color: var(--clr-white);
+    background-color:var(--clr-white) ;
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
@@ -144,7 +144,7 @@ main {
 }
 .product-detalles {
     background-color: var(--clr-main);
-    color: rgb(218, 211, 211);
+    color: rgb(209, 206, 206);
     padding: .5rem;
     border-radius: 1rem;
     margin-top: -2rem;
@@ -166,10 +166,11 @@ main {
     cursor: pointer;
     border: 2px solid var(--clr-white);
     transition: background-color .4s, color .4s;
+    font-weight: 900 ;
     
 }
 .btn-agg:hover {
-    background-color: var(--clr-main);
+    background-color: rgb(44, 4, 109);
     color: var(--clr-white);
 }
 
@@ -371,9 +372,19 @@ main {
     
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 470px) {
     .contenedor {
         grid-template-columns: repeat(1, 1fr);
-        padding: 2rem;
+        padding: 1.5rem;
+    }
+    main {
+        background-color: var(--clr-main);
+    }
+    .title-prin {
+        color: var(--clr-white);
+        font-size: 20px;
+    }
+    .product-detalles {
+        background-color: rgb(44, 4, 109);
     }
 }
